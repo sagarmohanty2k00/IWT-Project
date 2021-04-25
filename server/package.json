@@ -1,0 +1,12 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0"
+  }
+}
