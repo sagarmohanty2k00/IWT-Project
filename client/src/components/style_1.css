@@ -91,7 +91,6 @@ body {
   #main {
     margin-top: 72px;
   }
-
   
   /*--------------------------------------------------------------
   # Navigation Menu
@@ -438,13 +437,4 @@ body {
   }
   
 
-
-  /* CSS added by Sagar Mohanty */
-  .navbar__nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  a{
-    text-decoration: none;
-  }
+  /* CSS Added By Sagar Mohanty */

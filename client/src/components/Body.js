@@ -1,23 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Dashboard from './Dashboard'
+function Body(props) {
 
-function UserGreeting(props) {
-    return <h1>Hi Random</h1>;
-}
-
-function GuestGreeting(props) {
-    return <h1>Hi User</h1>;
-}
-
-function Body(props)  {
-
-    if (props.name == "true") {
-        return <UserGreeting />;
-    }
-    else {
         return (
-            <GuestGreeting />
+            <div className='body'>
+                <Dashboard name="Sagar" number="1" />
+            </div>
         );
-    }
 }
 
 export default Body
