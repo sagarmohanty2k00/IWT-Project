@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './style.css'
 
 function LoginRegister(props) {
     const [st, setSt] = useState('login')

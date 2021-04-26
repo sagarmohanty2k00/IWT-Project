@@ -11,7 +11,7 @@ import AppearedQuiz from './components/AppearedQuiz';
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(false)
   useEffect(() => {
-    const logindetails = ''
+    const logindetails = 'sagar'
     if(logindetails === ''){
       setIsLoggedIn(false);
     }
