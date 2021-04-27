@@ -3,32 +3,49 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Body from './components/Body'
 import Dashboard from './components/Dashboard'
-import LoginRegister from './components/LoginRegister'
+import Login from './components/Login'
+import Register from './components/Register'
 import Profile from './components/Profile'
 import { useEffect, useState } from 'react';
+import AddQuiz from './components/sagar/AddQuiz'
 import AppearedQuiz from './components/AppearedQuiz';
+import './components/style.css'
 
 function App() {
-  const [isLoggedin, setIsLoggedIn] = useState(false)
-  useEffect(() => {
-    const logindetails = 'sagar'
-    if(logindetails === ''){
-      setIsLoggedIn(false);
-    }
-    else{
-      setIsLoggedIn(true);
-    }
-  }, []);
-  if (isLoggedin){
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+
+
+  // const userdetails = async () => {
+  //   const response = await fetch('http://127.0.0.1:1234/isloggedin');
+  //   const result = await response.json()
+  //   if (result === true) {
+  //     setIsLoggedIn(true);
+  //   }
+  //   else {
+  //     setIsLoggedIn(false);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   userdetails();
+  //   // console.log(isLoggedIn)
+  // }, []);
+
+  if (isLoggedIn){
+    const number = 1;
     return (
       <BrowserRouter>
         <Navbar /> 
 
         <Switch>
-          {/* <Route exact path="/" component={Body()}/> */}
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Route exact path="/profile/<name:sagar>" component={Profile}/>
+          <Route exact path="/">
+            <Dashboard number/>
+          </Route>
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/body" component={Body}/>
           <Route exact path="/appeared-quiz" component={AppearedQuiz}/>
+          <Route exact path="/add-quiz" component={AddQuiz}/>
         </Switch>
 
       </BrowserRouter>
@@ -38,7 +55,14 @@ function App() {
 
   return (
     <div className="App">
-      <LoginRegister />
+      <BrowserRouter>
+
+        <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/register" component={Register}/>
+        </Switch>
+
+      </BrowserRouter>
     </div>
   );
 }

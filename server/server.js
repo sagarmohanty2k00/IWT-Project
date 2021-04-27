@@ -13,6 +13,30 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 1234;
 
+var isLoggedIn = true
+
+// GET requests :-
+// login
+app.get('/isloggedin', (req, res) => {
+    if(isLoggedIn){
+        res.send('true')
+    }
+    else{
+        res.send('false')
+    }
+})
+
+// get user details
+
+// get not appeared quiz
+
+// get quiz details
+
+// get appeared quiz details
+
+// get results
+
+// POST requests :-
 // register user 
 app.post('/register', async(req, res)=>{
     try{
@@ -23,13 +47,12 @@ app.post('/register', async(req, res)=>{
         );
         
         res.json(newStudent.rows[0]);
+        console.log(newStudent.rows[0]);
     }
     catch (err){
         console.log(err)
     }
 })
-
-// login
 
 // add subject
 app.post('/subjects/add', async (req, res)=>{
@@ -47,6 +70,9 @@ app.post('/subjects/add', async (req, res)=>{
 // add answer
 
 // add appeared
+
+// PUT requests :-
+// update user
 
 app.listen(PORT, ()=>{
     console.log(`Listening ${PORT}`);

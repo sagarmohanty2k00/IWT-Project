@@ -1,0 +1,69 @@
+
+/*---------------- Results page--------------------------------------------------------*/
+.res_container {
+	background: -webkit-linear-gradient(to right, #508b69, #537a5fc9);
+	background: linear-gradient(to right, #508b69, #5a976cc9);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	background:#49b98b;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 45%;
+	min-height: 480px;
+	padding-top: 80px;
+	padding-left: 60px;
+}
+#btnRes {
+	position: relative;
+}
+
+
+
+/*-------------------Profile page------------------------------------------------*/
+.user_profile {
+	background: #49b98b;
+	background: -webkit-linear-gradient(to right, #508b69, #68c082c9);
+	background: linear-gradient(to right, #508b69, #68c082c9);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	padding-top: 20px;
+	padding-left: 50px;
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+  
+
+  .addQuiz {
+	background: #49b98b;
+	background: -webkit-linear-gradient(to right, #508b69, #68c082c9);
+	background: linear-gradient(to right, #508b69, #68c082c9);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	padding-top: 20px;
+	padding-left: 50px;
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+  }
+  
+

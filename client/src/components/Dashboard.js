@@ -72,10 +72,12 @@ function Dashboard(props) {
     // const [mode, setMode] = useState('view-ersult') // can be 'appear-quiz' 'view-result' 'view-appeared-quiz' 'leaderboard' 'profile'
 
         return (
-            <div className="body">
-                <h1 className="Greeting mb-5">Hi {props.name} You have {props.number} quiz to appear</h1>
+            <div className="box-container__big">
+                <center>
+                    <h1 className="greeting mb-5">Hi {props.name} You have {props.number+1} quiz to appear</h1>
+                </center>
 
-                <div className="row">
+                <div className="row body">
                     {quiz_list.map((quiz, i) => (
                         <div id={i} className="mt-3 mb-3 col-lg-3 col-md-4 col-md-6 col-12">
                             <div className="card m-auto">
