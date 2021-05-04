@@ -109,7 +109,7 @@ a {
 }
 
 .nav__menu{
-    width: 300px;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -119,6 +119,7 @@ a {
 }
 
 .navbar__link{
+	margin: auto 10px;
     color: black;
 }
 
@@ -312,7 +313,9 @@ button.ghost {
 	z-index: 2;
   }
 
-
+.result-page {
+	padding: 100px;
+}
 
 /* Body */
 .body{
@@ -347,4 +350,29 @@ button.ghost {
 
 .addquiz__para {
 	font-size: 50px;
+}
+
+.d-none {
+	display: none;
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+
+	width: 800px;
+	height: 200px;
+
+	justify-content: space-around;
+}
+
+.option-row {
+	width: 100%;
+	font-size: 24px;
+	display: flex;
+	justify-content: space-between;
+}
+
+label {
+	margin-left: 10px;
 }

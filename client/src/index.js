@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+window.marks = 0;
+
+window.increase = () => {
+  window.marks += 10
+}
 ReactDOM.render(
   <React.StrictMode>
     <App />

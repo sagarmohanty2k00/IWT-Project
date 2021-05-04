@@ -1,103 +1,52 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Dashboard(props) {
-    const [qzid, setQzid] = useState(0)
+    const [quiz, setQuiz] = useState([])
+    const quiz_link = '/appear'
 
-    const quiz_list = [
-        { name: "sagar" },
-        { name: "Anwesha" },
-        { name: "Anwesha" },
-        { name: "Anwesha" },
-        { name: "Anwesha" },
-    ];
 
-    // const question_list = [
-    //     {
-    //         id: 1,
-    //         q : 'what is this?',
+    const initiate = async () => {
+        try {
+            const response = await fetch('http://127.0.0.1:1221/getallquiz');
+            const result = await response.json()
+            setQuiz(result)
+        } catch (err) {
+            console.log(err.message);
+        }
+        // console.log('finished');
+    }
 
-    //         a: 'cat',
-    //         b: 'dog',
-    //         c: 'apple',
-    //         d: 'ball',
+    useEffect(async () => {
+        initiate()
+        console.log(quiz);
+    }, []);
 
-    //         ans: 'a'
-    //     },
-    //     {
-    //         id: 2,
-    //         q : 'what is this?',
+    return (
+    <div className="box-container__big">
+        <center>
+            <h1 className="greeting mb-5">Hi {props?.name} You have {quiz.length} quiz to appear</h1>
+        </center>
 
-    //         a: 'cat',
-    //         b: 'dog',
-    //         c: 'apple',
-    //         d: 'ball',
-
-    //         ans: 'a'
-    //     },
-    //     {
-    //         id: 3,
-    //         q : 'what is this?',
-
-    //         a: 'cat',
-    //         b: 'dog',
-    //         c: 'apple',
-    //         d: 'ball',
-
-    //         ans: 'b'
-    //     },
-    //     {
-    //         id: 4,
-    //         q : 'what is this?',
-
-    //         a: 'cat',
-    //         b: 'dog',
-    //         c: 'apple',
-    //         d: 'ball',
-
-    //         ans: 'b'
-    //     },
-    //     {
-    //         id: 5,
-    //         q : 'what is this?',
-
-    //         a: 'cat',
-    //         b: 'dog',
-    //         c: 'apple',
-    //         d: 'ball',
-
-    //         ans: 'b'
-    //     },
-    // ]
-
-    // const [mode, setMode] = useState('view-ersult') // can be 'appear-quiz' 'view-result' 'view-appeared-quiz' 'leaderboard' 'profile'
-
-        return (
-            <div className="box-container__big">
-                <center>
-                    <h1 className="greeting mb-5">Hi {props.name} You have {props.number+1} quiz to appear</h1>
-                </center>
-
-                <div className="row body">
-                    {quiz_list.map((quiz, i) => (
-                        <div id={i} className="mt-3 mb-3 col-lg-3 col-md-4 col-md-6 col-12">
-                            <div className="card m-auto">
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <button className="card-link btn btn-success" onClick={() => {
-                                        console.log({i});
-                                        setQzid(i);
-                                        // setMode('appear-quiz')
-                                    } }>Appear</button>
-                                </div>
-                            </div>
+        <div className="row body">
+            {quiz.map((quiz, i) => (
+                <div id={i} className="mt-3 mb-3 col-lg-3 col-md-4 col-md-6 col-12">
+                    <div className="card m-auto">
+                        <div className="card-body">
+                            <h5 className="card-title">Physics - {quiz?.id}</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">TOTAL MARKS : {quiz?.total_marks}</h6>
+                            <h6 className="card-subtitle mb-2 text-muted">PASS MARKS : {quiz?.pass_marks}</h6>
+                            <a href={quiz_link+'/'+quiz?.id} ><button className="card-link btn btn-success" onClick={() => {
+                                console.log(quiz.id);
+                                // setMode('appear-quiz')
+                            } }>View</button></a>
                         </div>
-                    ))}
+                    </div>
                 </div>
+            ))}
+        </div>
 
-            </div>
-        );
+    </div>
+);
 
 
     // if (mode === 'appeared-quiz'){

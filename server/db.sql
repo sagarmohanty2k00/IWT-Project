@@ -101,3 +101,17 @@ CREATE TABLE appeared (
             REFERENCES quiz(id)
             ON DELETE CASCADE
 );
+
+
+
+
+-- Adding Questions 
+
+INSERT INTO question (quizid, question_text, op1, op2, op3, op4, correct) 
+VALUES (1, 
+'Multiplying or dividing vectors by scalars results in: but no direction?', 
+'Vectors if multiplied or scalars if divided', 
+'Scalars if multiplied scalars', 
+'Scalars', 
+'Vectors',
+4);
